@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Theme Changer</title>
+    <style>
+        .a {
+            border: white 2px solid;
+            background-color: rgb(73, 119, 121);
+            border-radius: 30px 30px 30px 30px;
+            height: 50px;
+            width: 80px;
+            font-size: 20px;
+            line-height: 7px;
+            text-indent: -2px;
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+        
+        a {
+            text-decoration: none;
+            color: white;
+        }
+        
+        .weather-icon {
+            font-size: 5rem;
+            color: yellow;
+            margin-left: 45vw;
+        }
+        
+        h1 {
+            font-family: arial unicode ms;
+        }
+        
+        .container {
+            margin-top: 2vh;
+            margin-left: 23vw;
+            height: 160px;
+            width: 50%;
+            text-align: center;
+        }
+        
+        .buttons {
+            margin-top: 40px;
+            margin-left: -40px;
+        }
+        
+        .b {
+            margin-left: 50px;
+            height: 50px;
+            width: 150px;
+            color: white;
+            font-family: arial unicode ms;
+            font-size: 1.2rem;
+            background-color: rgb(73, 119, 121);
+            border: 2px solid white;
+            border-radius: 10px 10px 10px 10px;
+            cursor: pointer;
+        }
+        
+        #rain {
+            position: fixed;
+            top: 0;
+            left: o;
+            height: 100%;
+            width: 100%;
+            pointer-events: none;
+            display: none;
+        }
+        
+        .drop {
+            position: relative;
+            height: 15px;
+            width: 2px;
+            background-color: white;
+            bottom: 100%;
+            animation: rain .5s linear infinite;
+        }
+        
+        @keyframes rain {
+            to {
+                transform: translateY(120vh);
+            }
+        }
+        
+        .a:hover {
+            transform: scale(1.1);
+            transition: .3s;
+        }
+        
+        .b:hover {
+            transform: scale(1.1);
+            transition: .3s;
+        }
+        
+        #stars {
+            position: fixed;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            display: none;
+        }
+        
+        .star {
+            position: absolute;
+            height: 3px;
+            width: 3px;
+            border-radius: 50%;
+            background-color: white;
+            animation: twinkle 2s ease-in-out infinite;
+        }
+        
+        @keyframes twinkle {
+            0% {
+                opacity: 0.2;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0.2;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <button class="a"><a href="projects.html">Back</a></button>
+    <div class="weather-icon" id="icon">☀</div>
+    <div class="container">
+        <h1>Weather Theme Changer</h1>
+        <div class="buttons">
+            <button onclick="setSunny()" class="b">Sunny</button>
+            <button onclick="setRainy()" class="b">Rainy</button>
+            <button onclick="setNight()" class="b">Night</button>
+        </div>
+    </div>
+    <div id="rain"></div>
+    <div id="stars"></div>
+    <audio id="rainSound" src="gentle-rain.mp3" loop></audio>
+    <audio id="nightSound" src="NightWithCrickets.mp3" loop></audio>
+    <audio id="daySound" src="birds-chirping.mp3" loop></audio>
+    <script>
+        const icon = document.getElementById('icon');
+        const rainContainer = document.getElementById('rain');
+        const starContainer = document.getElementById('stars');
+        const rainSound = document.getElementById('rainSound');
+        const nightSound = document.getElementById('nightSound');
+        const daySound = document.getElementById('daySound');
+
+        function clearDisplay() {
+            rainContainer.style.display = "none";
+            starContainer.style.display = "none";
+            rainContainer.innerHTML = "";
+            starContainer.innerHTML = "";
+            if (daySound) {
+                daySound.pause();
+            }
+            if (rainSound) {
+                rainSound.pause();
+            }
+            if (nightSound) {
+                nightSound.pause();
+            }
+
+        }
+
+        function setSunny() {
+            clearDisplay();
+            daySound.currentTime = 0;
+            daySound.play();
+            document.body.style.backgroundImage = "url('Sunny.webp')";
+            document.body.style.backgroundSize = "cover";
+            document.body.style.backgroundRepeat = "no-repeat";
+            document.body.style.color = "White";
+            icon.textContent = "☀";
+        }
+
+        function setRainy() {
+            clearDisplay();
+            rainSound.currentTime = 0;
+            rainSound.play();
+            document.body.style.backgroundImage = "url('CloudyNature.jpg')";
+            document.body.style.backgroundSize = "cover";
+            document.body.style.backgroundRepeat = "no-repeat";
+            document.body.style.color = "white";
+            icon.textContent = "☔";
+            rainContainer.style.display = "block";
+            for (let i = 0; i < 60; i++) {
+                let drop = document.createElement('div');
+                drop.classList.add('drop');
+                drop.style.left = Math.random() * 100 + "vw";
+                drop.style.animationDuration = 0.4 + Math.random() * 0.5 + "s";
+                rainContainer.appendChild(drop);
+            }
+        }
+
+        function setNight() {
+            clearDisplay();
+            nightSound.currentTime = 0;
+            nightSound.play();
+            document.body.style.background = "radial-gradient(#0A0F24,#1A1A1A)";
+            document.body.style.color = "white";
+            icon.textContent = "🌙";
+            starContainer.style.display = "block";
+            for (let i = 0; i < 80; i++) {
+                let star = document.createElement('div');
+                star.classList.add('star');
+                star.style.top = Math.random() * 100 + "vh";
+                star.style.left = Math.random() * 100 + "vw";
+                starContainer.appendChild(star);
+            }
+        }
+    </script>
+
+</body>
+
+</html>

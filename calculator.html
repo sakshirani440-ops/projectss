@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Simple Calculator</title>
+    <style>
+        body {
+            background-color: #FFF4E6;
+            font-family: Arial;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .a {
+            border: white 2px solid;
+            background-color: #302019;
+            border-radius: 30px 30px 30px 30px;
+            height: 50px;
+            width: 80px;
+            margin-top: 30px;
+            font-size: 18px;
+            line-height: 7px;
+            text-indent: -2px;
+        }
+        
+        a {
+            text-decoration: none;
+            color: white;
+        }
+        
+        .calculator {
+            box-shadow: 0px 0px 20px #946854;
+            background-color: white;
+            border-radius: 30px 30px 30px 30px;
+            margin-top: 10vh;
+            width: 28%;
+            height: 430px;
+        }
+        
+        #display {
+            background-color: rgb(34, 31, 31);
+            color: white;
+            border-radius: 20px 20px 20px 20px;
+            width: 88%;
+            height: 70px;
+            font-size: 32px;
+            margin-top: 20px;
+            margin-left: 20px;
+        }
+        
+        .buttons {
+            width: 100%;
+            height: 300px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        .buttons button {
+            background-color: rgb(253, 227, 193);
+            color: black;
+            border: none;
+            border-radius: 20px 20px 20px 20px;
+            width: 80px;
+            height: 50px;
+            margin-left: 3px;
+            margin-top: 6px;
+            font-size: 24px;
+        }
+        
+        #arithmatic {
+            background-color: #946854;
+            color: white;
+        }
+        
+        #arith {
+            background-color: #302019;
+            color: white;
+        }
+        
+        .clear {
+            width: 210px;
+            background-color: red;
+            color: white;
+        }
+        
+        #clr {
+            width: 170px;
+        }
+        
+        .a:hover {
+            background-color: #302019;
+            transform: scale(1.1);
+            transition: .2s;
+        }
+        
+        button:hover {
+            background-color: #946854;
+            color: white;
+        }
+        
+        #arithmatic:hover {
+            opacity: 0.9;
+        }
+        
+        #arith:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+
+    <div class="calculator">
+        <input type="text" id="display" disabled>
+
+        <div class="buttons">
+
+
+            <button onclick="clearDisplay()" class="clear" id="clr">C</button>
+
+            <button onclick="backspace()">CLR</button>
+            <button onclick="press('/')" id="arithmatic">&#247;</button>
+            <button onclick="press('7')">7</button>
+            <button onclick="press('8')">8</button>
+            <button onclick="press('9')">9</button>
+
+            <button onclick="press('*')" id="arithmatic">&#215;</button>
+            <button onclick="press('4')">4</button>
+            <button onclick="press('5')">5</button>
+            <button onclick="press('6')">6</button>
+
+            <button onclick="press('-')" id="arithmatic">-</button>
+            <button onclick="press('1')">1</button>
+            <button onclick="press('2')">2</button>
+            <button onclick="press('3')">3</button>
+
+            <button onclick="press('+')" id="arithmatic">+</button>
+            <button onclick="press('0')" id="zero">0</button>
+            <button onclick="press('00')">00</button>
+            <button onclick="press('.')">.</button>
+            <button onclick="calculate()" id="arith">=</button>
+
+
+
+        </div>
+    </div>
+    <button class="a"><a href="projects.html">Back</a></button>
+
+
+    <script>
+        function press(num) {
+            document.getElementById("display").value += num;
+        }
+
+        function calculate() {
+            let exp = document.getElementById("display").value;
+            let result = eval(exp); // calculates the expression
+            document.getElementById("display").value = result;
+        }
+
+
+        function backspace() {
+            let space = document.getElementById('display');
+            space.value = space.value.slice(0, -1);
+        }
+
+        function clearDisplay() {
+            document.getElementById("display").value = "";
+        }
+    </script>
+</body>
+
+</html>

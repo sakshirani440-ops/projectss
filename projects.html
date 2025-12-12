@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyPortfolio | Projects</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+         :root {
+            --bg: #FFF4E6;
+            --text: #5C4033;
+            --nav-bg: #5C4033;
+            --card-bg: white;
+            --bg-name2: #5C4033;
+            --color-name2: white;
+            --color-footer: black;
+            --box-sh: #af8470;
+            --color-live: white;
+            --live-bgcolor: #5C4033;
+            --card-color: white;
+            --card-border: #5C4033;
+        }
+        
+        .dark-mode {
+            --bg: #1b1b1b;
+            --text: #ffffff;
+            --nav-bg: #2e2e2e;
+            --card-bg: #2b2b2b;
+            --bg-name2: white;
+            --color-name2: #1b1b1b;
+            --color-footer: white;
+            --box-sh: white;
+            --color-live: black;
+            --live-bgcolor: #1b1b1b;
+            --card-color: #2e2e2e;
+            --card-border: #2e2e2e;
+        }
+        
+        body {
+            position: relative;
+            background-color: var(--bg);
+        }
+        
+        * {
+            margin: 0px;
+        }
+        
+        nav {
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            background-color: var(--nav-bg);
+            width: 4.5vw;
+            height: 100vh;
+        }
+        
+        ol {
+            list-style-type: none;
+            margin-left: -35px;
+            margin-right: 5px;
+            margin-top: 22vh;
+        }
+        
+        ol .n {
+            height: 50px;
+            margin-top: 5px;
+        }
+        
+        .navbar {
+            display: block;
+            width: 100%;
+            height: 100%;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+        
+        .nav {
+            overflow: hidden;
+            font-size: 20px;
+            padding: 1px;
+        }
+        
+        .material-icons {
+            font-size: 32px;
+            margin-left: 10px;
+        }
+        
+        .name {
+            height: 100px;
+        }
+        
+        .name3 {
+            position: absolute;
+            color: var(--text);
+            margin-left: 80vw;
+            margin-top: 5vh;
+            font-size: 2.5rem;
+            font-weight: 700;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            animation: slide-out 2s ease forwards;
+        }
+        
+        .name2 {
+            position: absolute;
+            display: inline-block;
+            text-align: center;
+            width: 70px;
+            border: solid 1px #5C4033;
+            border-radius: 25px 0px 0px 25px;
+            color: var(--color-name2);
+            background-color: var(--bg-name2);
+            margin-left: 74.6vw;
+            margin-top: 5vh;
+            font-size: 2.5rem;
+            font-weight: 700;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        
+        .head {
+            margin-left: 10vw;
+            margin-top: 10vh;
+            color: var(--text);
+            font-family: arial unicode ms;
+            font-size: 2.7rem;
+        }
+        
+        .container {
+            margin-top: 10vh;
+            display: flex;
+            margin-left: 10vw;
+            margin-right: 6vw;
+            height: 400px;
+        }
+        
+        .calculator {
+            margin-top: 30px;
+            height: 330px;
+            border: 2px solid var(--card-border);
+            width: 300px;
+            background-color: var(--card-color);
+            border-radius: 20px 20px 20px 20px;
+            color: var(--color-footer);
+        }
+        
+        .weather-changer {
+            margin-top: 30px;
+            height: 330px;
+            border: 2px solid var(--card-border);
+            width: 300px;
+            background-color: var(--card-color);
+            margin-left: 20px;
+            border-radius: 20px 20px 20px 20px;
+            color: var(--color-footer);
+        }
+        
+        .mini-head {
+            margin-top: 20px;
+            font-size: 1.4rem;
+            font-family: arial unicode ms;
+            margin-left: 10px;
+        }
+        
+        p {
+            margin-top: 30px;
+            margin-left: 10px;
+            font-size: 1.1rem;
+            line-height: 23px;
+            font-family: arial unicode ms;
+        }
+        
+        .live {
+            font-size: 0.9rem;
+            text-decoration: none;
+            background-color: var(--live-bgcolor);
+            color: white;
+            display: inline-block;
+        }
+        
+        #calc {
+            border-radius: 15px 15px 15px 15px;
+            margin-left: 10px;
+            margin-top: 40px;
+            height: 30px;
+            width: 100px;
+            background-color: var(--live-bgcolor);
+            color: var(--color-live);
+        }
+        
+        #weather {
+            border-radius: 15px 15px 15px 15px;
+            margin-top: 59px;
+            margin-left: 10px;
+            height: 30px;
+            width: 100px;
+            background-color: var(--live-bgcolor);
+            color: var(--color-footer);
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 30vh;
+            margin-bottom: 15vh;
+            color: var(--color-footer);
+        }
+        
+        nav:hover {
+            width: 20vw;
+            transition: 0.3s;
+        }
+        
+        .n:hover {
+            background-color: var(--bg);
+            transition: .3s;
+        }
+        
+        .navbar:hover {
+            color: var(--text);
+            transition: .3s;
+        }
+        
+        .calculator:hover {
+            box-shadow: 5px 10px var(--box-sh);
+            transform: translateY(-15px);
+            transition: .3s;
+        }
+        
+        .weather-changer:hover {
+            box-shadow: 5px 10px var(--box-sh);
+            transform: translateY(-15px);
+            transition: .3s;
+        }
+        
+        #calc:hover {
+            transform: scale(1.1);
+            transition: .2s;
+        }
+        
+        #weather:hover {
+            transform: scale(1.1);
+            transition: .2s;
+        }
+        
+        .toggle {
+            font-size: 30px;
+            background-color: var(--nav-bg);
+            border: none;
+            margin-top: 20px;
+            border-radius: 100%;
+            width: 50px;
+            margin-left: 6px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <button id="theme-toggle" class="toggle">🌙</button>
+        <ol>
+            <li class="n"> <a href="index.html" class="navbar"><i class="material-icons">home</i><span class="nav">Home</span></a></li>
+            <li class="n"><a href="About.html" class="navbar"><i class="material-icons">person</i><span class="nav">About</span></a></li>
+            <li class="n"><a href="projects.html" class="navbar"><i class="material-icons">work</i><span class="nav">Projects</span></a></li>
+            <li class="n"><a href="contact.html" class="navbar"><i class="material-icons">local_phone</i><span class="nav">Contact</span></a></li>
+        </ol>
+    </nav>
+    <div class="name">
+        <span class="name2">my</span>
+        <span class="name3">Portfolio</span>
+    </div>
+    <h1 class="head">Mini Projects</h1>
+    <div class="container">
+        <div class="calculator">
+            <h1 class="mini-head">Calculator</h1>
+            <p>A simple and user-friendly calculator built using HTML, CSS and Javascript to perform basic arithmatic operations like addition, subtraction, multiplication and division.</p>
+            <button id="calc"><a href="calculator.html" class="live">Live Demo</a></button>
+        </div>
+        <div class="weather-changer">
+            <h1 class="mini-head">Weather Theme Changer</h1>
+            <p>Built with HTML, CSS and Javascript, it is a mini project that changes the background and visuals based on selected weather conditions.
+            </p>
+            <button id="weather"><a href="Weather changer.html" class="live">Live Demo</a></button>
+        </div>
+
+    </div>
+    <footer>&#9400; 2025 Sakshi &#183; Made with ❤ by me</footer>
+    <script>
+        const toggle = document.getElementById("theme-toggle");
+
+        // Load saved mode
+        if (localStorage.getItem("mode") === "dark") {
+            document.body.classList.add("dark-mode");
+            toggle.textContent = "☀️";
+        }
+
+        toggle.onclick = () => {
+            document.body.classList.toggle("dark-mode");
+
+            if (document.body.classList.contains("dark-mode")) {
+                localStorage.setItem("mode", "dark");
+                toggle.textContent = "☀️";
+            } else {
+                localStorage.setItem("mode", "light");
+                toggle.textContent = "🌙";
+            }
+        };
+    </script>
+</body>
+
+</html>

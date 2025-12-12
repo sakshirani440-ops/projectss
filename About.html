@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyPortfolio | About</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+         :root {
+            --bg: #FFF4E6;
+            --text: #5C4033;
+            --nav-bg: #5C4033;
+            --card-bg: white;
+            --color-a: #3f2c24;
+            --bg-name2: #5C4033;
+            --color-name2: white;
+            --color-footer: black;
+            --contain-color: white;
+        }
+        
+        .dark-mode {
+            --bg: #1b1b1b;
+            --text: #ffffff;
+            --nav-bg: #2e2e2e;
+            --card-bg: #2b2b2b;
+            --color-a: white;
+            --bg-name2: white;
+            --color-name2: #1b1b1b;
+            --color-footer: white;
+            --contain-color: #2e2e2e;
+        }
+        
+        body {
+            position: relative;
+            background-color: var(--bg);
+        }
+        
+        * {
+            margin: 0px;
+        }
+        
+        nav {
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            background-color: var(--nav-bg);
+            width: 4.5vw;
+            height: 100vh;
+        }
+        
+        ol {
+            list-style-type: none;
+            margin-left: -35px;
+            margin-right: 5px;
+            margin-top: 22vh;
+        }
+        
+        ol .n {
+            height: 50px;
+            margin-top: 5px;
+        }
+        
+        .navbar {
+            display: block;
+            width: 100%;
+            height: 100%;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+        
+        .nav {
+            overflow: hidden;
+            font-size: 20px;
+            padding: 1px;
+        }
+        
+        .material-icons {
+            font-size: 32px;
+            margin-left: 10px;
+        }
+        
+        .name {
+            height: 100px;
+        }
+        
+        .name3 {
+            position: absolute;
+            color: var(--text);
+            margin-left: 80vw;
+            margin-top: 5vh;
+            font-size: 2.5rem;
+            font-weight: 700;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        
+        .name2 {
+            position: absolute;
+            display: inline-block;
+            text-align: center;
+            width: 70px;
+            border: solid 1px #5C4033;
+            border-radius: 25px 0px 0px 25px;
+            color: var(--color-name2);
+            background-color: var(--bg-name2);
+            margin-left: 74.6vw;
+            margin-top: 5vh;
+            font-size: 2.5rem;
+            font-weight: 700;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        
+        .container {
+            margin-left: 20vh;
+        }
+        
+        .a {
+            margin-top: 10vh;
+            font-family: arial unicode ms;
+            color: var(--color-a);
+        }
+        
+        .contain {
+            border: solid 2px var(--color-a);
+            border-radius: 20px 20px 20px 20px;
+            background-color: var(--contain-color);
+            margin-top: 5vh;
+            height: 100px;
+            color: var(--color-footer);
+        }
+        
+        .contain1 {
+            border: solid 2px var(--color-a);
+            border-radius: 20px 20px 20px 20px;
+            background-color: var(--contain-color);
+            margin-top: 5vh;
+            height: 100px;
+            color: var(--color-footer);
+        }
+        
+        .o {
+            text-align: end;
+            margin-top: 10vh;
+            font-family: arial unicode ms;
+            color: var(--color-a);
+            margin-right: 3vw;
+        }
+        
+        p {
+            margin-top: 30px;
+            margin-left: 20px;
+            font-size: 1.2rem;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 30vh;
+            margin-bottom: 15vh;
+            color: var(--color-footer);
+        }
+        
+        nav:hover {
+            width: 20vw;
+            transition: 0.3s;
+        }
+        
+        .n:hover {
+            background-color: var(--bg);
+            transition: .3s;
+        }
+        
+        .navbar:hover {
+            color: var(--text);
+            transition: .3s;
+        }
+        
+        button {
+            font-size: 30px;
+            background-color: var(--nav-bg);
+            border: none;
+            margin-top: 20px;
+            border-radius: 100%;
+            width: 50px;
+            margin-left: 6px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <button id="theme-toggle">🌙</button>
+        <ol>
+            <li class="n"> <a href="index.html" class="navbar"><i class="material-icons">home</i><span class="nav">Home</span></a></li>
+            <li class="n"><a href="About.html" class="navbar"><i class="material-icons">person</i><span class="nav">About</span></a></li>
+            <li class="n"><a href="projects.html" class="navbar"><i class="material-icons">work</i><span class="nav">Projects</span></a></li>
+            <li class="n"><a href="contact.html" class="navbar"><i class="material-icons">local_phone</i><span class="nav">Contact</span></a></li>
+        </ol>
+    </nav>
+    <div class="name">
+        <span class="name2">my</span>
+        <span class="name3">Portfolio</span>
+    </div>
+    <div class="container">
+        <h1 class="a">Introduction</h1>
+        <div class="contain1">
+            <p>Hi, I'm Sakshi Rani, a passionate full-stack developer who loves turning ideas into interactive and visually stunning websites. i enjoy building things from scratch and bringing creative concepts to life through code and design.
+            </p>
+        </div>
+        <h1 class="o">Education</h1>
+        <div class="contain">
+
+            <p>I completed my 10th in the year 2020 and my 12th in the year 2022 from S.A Jain Senior Model School, Ambala City. I also completed my Graduation in the year 2025 from Government P.G College, Ambala Cantt.
+            </p>
+        </div>
+        <h1 class="a">My Focus</h1>
+        <div class="contain1">
+
+            <p>Currently I'm I specialize in HTML,CSS and Javascript, with a growing interest in crafting smooth user experiences and learning more about full-stack development. I love combining design and logic to make websites both beautiful and functional.
+            </p>
+        </div>
+        <h1 class="o">My Journey</h1>
+        <div class="contain">
+
+            <p>My journey began during my BCA studies, where i discovered how satisfying it is to create unique and beautiful websites using my own ideas and creativity.
+            </p>
+        </div>
+        <h1 class="a">About Me </h1>
+        <div class="contain1">
+
+            <p>I believe in learning by doing, staying curious, anad building meaningful things that can inspire others. I enjoy working eith people who share ideas, energy, and creativity.
+            </p>
+        </div>
+        <footer>&#9400; 2025 Sakshi &#183; Made with ❤ by me</footer>
+        <script>
+            const toggle = document.getElementById("theme-toggle");
+
+            // Load saved mode
+            if (localStorage.getItem("mode") === "dark") {
+                document.body.classList.add("dark-mode");
+                toggle.textContent = "☀️";
+            }
+
+            toggle.onclick = () => {
+                document.body.classList.toggle("dark-mode");
+
+                if (document.body.classList.contains("dark-mode")) {
+                    localStorage.setItem("mode", "dark");
+                    toggle.textContent = "☀️";
+                } else {
+                    localStorage.setItem("mode", "light");
+                    toggle.textContent = "🌙";
+                }
+            };
+        </script>
+</body>
+
+</html>

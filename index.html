@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyPortfolio | Home</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+         :root {
+            --bg: #FFF4E6;
+            --text: #5C4033;
+            --nav-bg: #5C4033;
+            --card-bg: white;
+            --bg-name2: #5C4033;
+            --color-name2: white;
+            --bg-S: #5C4033;
+            --color-S: white;
+            --box-sh: #af8470;
+            --border-box: #3b2a22;
+            --card-bcolor: #5C4033;
+        }
+        
+        .dark-mode {
+            --card-bcolor: #2e2e2e;
+            --bg: #1b1b1b;
+            --text: #ffffff;
+            --nav-bg: #2e2e2e;
+            --card-bg: #2b2b2b;
+            --bg-name2: white;
+            --color-name2: #1b1b1b;
+            --bg-S: white;
+            --color-S: #1b1b1b;
+            --box-sh: white;
+            --border-box: white;
+            --color-para: white;
+        }
+        
+        body {
+            background-color: var(--bg);
+            overflow: hidden;
+        }
+        
+        * {
+            margin: 0px;
+        }
+        
+        nav {
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            background-color: var(--nav-bg);
+            width: 4.5vw;
+            height: 100vh;
+        }
+        
+        ol {
+            list-style-type: none;
+            margin-left: -35px;
+            margin-right: 5px;
+            margin-top: 22vh;
+        }
+        
+        ol .n {
+            height: 50px;
+            margin-top: 5px;
+        }
+        
+        .navbar {
+            display: block;
+            width: 100%;
+            height: 100%;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+        
+        .nav {
+            overflow: hidden;
+            font-size: 20px;
+            padding: 1px;
+        }
+        
+        .material-icons {
+            font-size: 32px;
+            margin-left: 10px;
+        }
+        
+        .name {
+            height: 100px;
+        }
+        
+        .name3 {
+            position: absolute;
+            color: var(--text);
+            margin-left: 80vw;
+            margin-top: 5vh;
+            font-size: 2.5rem;
+            font-weight: 700;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            animation: slide-out 2s ease forwards;
+        }
+        
+        .name2 {
+            position: absolute;
+            display: inline-block;
+            text-align: center;
+            width: 70px;
+            border: solid 1px #5C4033;
+            border-radius: 25px 0px 0px 25px;
+            color: var(--color-name2);
+            background-color: var(--bg-name2);
+            margin-left: 74.6vw;
+            margin-top: 5vh;
+            font-size: 2.5rem;
+            font-weight: 700;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        
+        .p {
+            height: 60px;
+            line-height: 50px;
+            margin-top: 10vh;
+            color: var(--text);
+            font-size: 1.5rem;
+            font-family: arial unicode ms;
+            font-weight: 600;
+        }
+        
+        .S {
+            display: inline-block;
+            text-align: center;
+            background-color: var(--nav-bg);
+            color: white;
+            border-radius: 30px 30px 30px 30px;
+            width: 90px;
+            font-weight: 800;
+        }
+        
+        .head1 {
+            font-size: 2.3rem;
+            font-family: arial unicode ms;
+            color: var(--text);
+            font-weight: 700;
+        }
+        
+        .hey {
+            color: var(--text);
+            font-family: arial unicode ms;
+            margin-top: 2vh;
+            font-size: 1.2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--nav-bg);
+            color: white;
+            text-decoration: none;
+            height: 40px;
+            width: 200px;
+            margin-top: 5vh;
+            text-align: center;
+            line-height: 35px;
+            font-family: arial unicode ms;
+            font-size: 1.5rem;
+            border-radius: 10px 10px 10px 10px;
+            transition: transform .3s ease;
+        }
+        
+        .content {
+            width: 40%;
+            margin-left: 6vw;
+            margin-top: 3vh;
+        }
+        
+        .container {
+            display: flex;
+            flex-direction: row;
+            height: 100%;
+            margin-left: 5vw;
+            margin-top: 5vh;
+        }
+        
+        .img {
+            border-left: solid 2px var(--text);
+            width: 400px;
+            margin-left: 80px;
+            margin-top: 40px;
+        }
+        
+        img {
+            margin-top: 5px;
+            margin-left: 100px;
+            border: 2px dashed var(--text);
+            border-radius: 100%;
+            height: 350px;
+            width: 330px;
+            animation: fade-out .7s ease-out 4s forwards;
+        }
+        
+        .box {
+            display: flex;
+            flex-direction: row;
+            margin-top: 30vh;
+            margin-left: 10vw;
+            height: 200px;
+        }
+        
+        .projects {
+            width: 25vw;
+            margin-left: 50px;
+            border-radius: 20px 20px 20px 20px;
+            transition: transform .3s ease;
+            border: var(--card-bcolor) 2px solid;
+            background-color: var(--card-bg);
+        }
+        
+        .myskills {
+            width: 25vw;
+            border-radius: 20px 20px 20px 20px;
+            transition: transform .3s ease;
+            border: var(--card-bcolor) 2px solid;
+            background-color: var(--card-bg);
+        }
+        
+        .contact {
+            width: 25vw;
+            margin-left: 50px;
+            border-radius: 20px 20px 20px 20px;
+            transition: transform .3s ease;
+            border: var(--card-bcolor) 2px solid;
+            background-color: var(--card-bg);
+        }
+        
+        .same {
+            font-size: 1.7rem;
+            margin-top: 10px;
+            margin-left: 10px;
+            font-family: arial unicode ms;
+            color: var(--text);
+            font-weight: 700;
+        }
+        
+        .para1 {
+            margin-top: 20px;
+            margin-left: 10px;
+            color: var(--color-para);
+        }
+        
+        .para {
+            margin-top: 20px;
+            margin-left: 10px;
+            font-size: 1.1rem;
+            color: var(--color-para);
+        }
+        
+        .a {
+            display: inline-block;
+            padding: 20px;
+            margin-top: 20px;
+            font-size: 1.2rem;
+            color: var(--text);
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 30vh;
+            margin-bottom: 15vh;
+            color: var(--color-para);
+        }
+        
+        nav:hover {
+            width: 20vw;
+            transition: 0.3s;
+        }
+        
+        .n:hover {
+            background-color: var(--bg);
+            transition: .3s;
+        }
+        
+        .navbar:hover {
+            color: var(--text);
+            transition: .3s;
+        }
+        
+        .btn:hover {
+            transform: scale(1.05);
+        }
+        
+        .myskills:hover {
+            background-color: var(--card-bg);
+            transform: scale(1.05);
+            box-shadow: 5px 10px var(--box-sh);
+            border: solid 1px var(--card-bcolor);
+        }
+        
+        .projects:hover {
+            background-color: var(--card-bg);
+            transform: scale(1.05);
+            box-shadow: 5px 10px var(--box-sh);
+            border: solid 1px var(--card-bcolor);
+        }
+        
+        .contact:hover {
+            background-color: var(--card-bg);
+            transform: scale(1.05);
+            box-shadow: 5px 10px var(--box-sh);
+            border: solid 1px var(--card-bcolor);
+        }
+        
+        @keyframes fade-out {
+            0% {
+                transform: translateZ(-800px) rotateY(90deg);
+                opacity: 0;
+            }
+            54% {
+                transform: translateZ(-160px) rotateY(87deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateZ(0) rotateY(0);
+            }
+        }
+        
+        body {
+            margin: 0;
+            overflow: hidden;
+            /* hides scrollbars while animation happens */
+        }
+        
+        .my {
+            font-size: 2.5rem;
+            font-weight: 700;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            display: inline-block;
+            text-align: center;
+            width: 70px;
+            border: solid 1px white;
+            border-radius: 25px 0px 0px 25px;
+            background-color: #FFF4E6;
+            margin-top: 45vh;
+            margin-left: 44.6vw;
+        }
+        
+        a {
+            text-decoration: none;
+            color: #5C4033;
+        }
+        
+        .portfolio {
+            color: #5C4033;
+            margin-top: 45vh;
+            margin-left: -2px;
+            font-size: 2.5rem;
+            font-weight: 700;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        
+        button {
+            font-size: 30px;
+            background-color: var(--nav-bg);
+            border: none;
+            margin-top: 20px;
+            border-radius: 100%;
+            width: 50px;
+            margin-left: 6px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <button id="theme-toggle">🌙</button>
+        <ol>
+            <li class="n"> <a href="index.html" class="navbar "><i class="material-icons">home</i><span class="nav">Home</span></a></li>
+            <li class="n"><a href="About.html" class="navbar "><i class="material-icons">person</i><span class="nav">About</span></a></li>
+            <li class="n"><a href="projects.html" class="navbar "><i class="material-icons">work</i><span class="nav">Projects</span></a></li>
+            <li class="n"><a href="contact.html" class="navbar "><i class="material-icons">local_phone</i><span class="nav">Contact</span></a></li>
+        </ol>
+    </nav>
+    <div class="name">
+        <span class="name2">my</span>
+        <span class="name3">Portfolio</span>
+    </div>
+    <div class="container">
+        <div class="content">
+
+            <p class="p">Hello! This is <span class="S">Sakshi</span></p>
+
+
+            <p class="head1">Welcome to my portfolio</p>
+
+
+            <p class="hey">I am a beginner web developer and tech enthusiast. I enjoy building websites and experimenting with coding projects. I love creating things from scratch and seeing ideas come to life!
+            </p>
+
+
+
+            <a href="projects.html" class="btn">See my work</a>
+        </div>
+
+
+        <div class="img">
+            <img src="image.jpg" alt="no img found">
+
+        </div>
+    </div>
+    <div class="box">
+        <div class="myskills">
+            <p class="same">My Skills</p>
+            <ul>
+                <li class="para1">HTML</li>
+                <li class="para">CSS</li>
+                <li class="para">Javascript</li>
+            </ul>
+        </div>
+        <div class="projects">
+            <p class="same">Featured Projects</p>
+            <p class="para">A short list of one of my best projects. Click below to check out my projects.</p>
+            <a href="project.html" class="a">Check out &#8594;</a>
+        </div>
+        <div class="contact">
+            <p class="same">Contact me</p>
+            <p class="para">Want to work together? Reach out via contact page.</p>
+            <a href="contact.html" class="a">Contact &#8594;</a>
+        </div>
+    </div>
+    <footer>&#9400; 2025 Sakshi &#183; Made with ❤ by me</footer>
+    <script>
+        setTimeout(() => {
+            document.querySelector('.curtain').style.display = "none";
+            document.body.style.overflow = "auto";
+
+        }, 4500);
+
+        const toggle = document.getElementById("theme-toggle");
+
+        // Load saved mode
+        if (localStorage.getItem("mode") === "dark") {
+            document.body.classList.add("dark-mode");
+            toggle.textContent = "☀️";
+        }
+
+        toggle.onclick = () => {
+            document.body.classList.toggle("dark-mode");
+
+            if (document.body.classList.contains("dark-mode")) {
+                localStorage.setItem("mode", "dark");
+                toggle.textContent = "☀️";
+            } else {
+                localStorage.setItem("mode", "light");
+                toggle.textContent = "🌙";
+            }
+        };
+    </script>
+</body>
+
+</html>

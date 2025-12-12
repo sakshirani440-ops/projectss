@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyPortfolio | Contact</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+         :root {
+            --bg: #FFF4E6;
+            --text: #5C4033;
+            --nav-bg: #5C4033;
+            --card-bg: white;
+            --bg-name2: #5C4033;
+            --color-name2: white;
+            --color-h1: #533a2e;
+            --color-footer: black;
+            --input-color: white;
+        }
+        
+        .dark-mode {
+            --bg: #1b1b1b;
+            --text: #ffffff;
+            --nav-bg: #2e2e2e;
+            --card-bg: #2b2b2b;
+            --bg-name2: white;
+            --color-name2: #1b1b1b;
+            --color-h1: white;
+            --color-footer: white;
+            --input-color: #2e2e2e;
+        }
+        
+        body {
+            position: relative;
+            background-color: var(--bg);
+        }
+        
+        * {
+            margin: 0px;
+        }
+        
+        nav {
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            background-color: var(--nav-bg);
+            width: 4.5vw;
+            height: 100vh;
+        }
+        
+        ol {
+            list-style-type: none;
+            margin-left: -35px;
+            margin-right: 5px;
+            margin-top: 29vh;
+        }
+        
+        ol .n {
+            height: 50px;
+            margin-top: 5px;
+        }
+        
+        .navbar {
+            display: block;
+            width: 100%;
+            height: 100%;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+        
+        .nav {
+            overflow: hidden;
+            font-size: 20px;
+            padding: 1px;
+        }
+        
+        .material-icons {
+            font-size: 32px;
+            margin-left: 10px;
+        }
+        
+        .name {
+            height: 100px;
+        }
+        
+        .name3 {
+            position: absolute;
+            color: var(--text);
+            margin-left: 80vw;
+            margin-top: 5vh;
+            font-size: 2.5rem;
+            font-weight: 700;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            animation: slide-out 2s ease forwards;
+        }
+        
+        .name2 {
+            position: absolute;
+            display: inline-block;
+            text-align: center;
+            width: 70px;
+            border: solid 1px #5C4033;
+            border-radius: 25px 0px 0px 25px;
+            color: var(--color-name2);
+            background-color: var(--bg-name2);
+            margin-left: 74.6vw;
+            margin-top: 5vh;
+            font-size: 2.5rem;
+            font-weight: 700;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        
+        .container {
+            margin-left: 30vh;
+            margin-top: 7vh;
+        }
+        
+        #fname,
+        #lname,
+        #emailid,
+        #contact,
+        #message {
+            color: var(--color-footer);
+            margin-top: 10px;
+            height: 30px;
+            width: 600px;
+            background-color: var(--input-color);
+        }
+        
+        #sub {
+            margin-top: 50px;
+            margin-left: 150px;
+            width: 300px;
+            height: 30px;
+            background-color: var(--nav-bg);
+            color: white;
+            font-size: 1rem;
+            border-radius: 10px 10px 10px 10px;
+            border: none;
+        }
+        
+        label {
+            display: inline-block;
+            margin-top: 30px;
+            font-size: 1.2rem;
+            color: var(--color-footer);
+        }
+        
+        h1 {
+            margin-left: 30vh;
+            margin-top: 10vh;
+            font-family: arial unicode ms;
+            color: var(--color-h1);
+        }
+        
+        p {
+            margin-left: 30vh;
+            margin-top: 5vh;
+            font-size: 1.2rem;
+            color: var(--color-footer);
+        }
+        
+        .message {
+            height: 100px;
+            width: 600px;
+            font-size: 14px;
+            resize: vertical;
+            background-color: var(--input-color);
+            color: var(--color-footer);
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 30vh;
+            margin-bottom: 15vh;
+            color: var(--color-footer);
+        }
+        
+        nav:hover {
+            width: 20vw;
+            transition: 0.3s;
+        }
+        
+        .n:hover {
+            background-color: var(--bg);
+            transition: .3s;
+        }
+        
+        .navbar:hover {
+            color: var(--text);
+            transition: .3s;
+        }
+        
+        #sub:hover {
+            transform: scale(1.02);
+        }
+        
+        button {
+            font-size: 30px;
+            background-color: var(--nav-bg);
+            border: none;
+            margin-top: 20px;
+            border-radius: 100%;
+            width: 50px;
+            margin-left: 6px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <button id="theme-toggle">🌙</button>
+        <ol>
+            <li class="n"> <a href="index.html" class="navbar"><i class="material-icons">home</i><span class="nav">Home</span></a></li>
+            <li class="n"><a href="About.html" class="navbar"><i class="material-icons">person</i><span class="nav">About</span></a></li>
+            <li class="n"><a href="projects.html" class="navbar"><i class="material-icons">work</i><span class="nav">Projects</span></a></li>
+            <li class="n"><a href="contact.html" class="navbar"><i class="material-icons">local_phone</i><span class="nav">Contact</span></a></li>
+        </ol>
+    </nav>
+    <div class="name">
+        <span class="name2">my</span>
+        <span class="name3">Portfolio</span>
+    </div>
+    <h1>Contact Me</h1>
+    <p>If you'd like to work together then you can send me a message by filling the form below or you can Email me at <a href="#">sakshirani@gmail.com</a></p>
+    <div class="container">
+        <form>
+            <label for="fname" class="label">First Name:</label><br>
+            <input type="text" id="fname" name="fname" placeholder="Enter your first name"><br>
+            <label for="lname" class="label">Last Name:</label><br>
+            <input type="text" id="lname" name="lname" placeholder="Enter your last name"><br>
+            <label for="emailid" class="label">E-mail:</label><br>
+            <input type="email" name="emailid" id="emailid" placeholder="Enter your Email id"><br>
+            <label for="contact" class="label">Contact no:</label><br>
+            <input type="text" id="contact" name="contact" placeholder="e.g: 123123123"><br>
+            <label for="message" class="label">Message:</label><br>
+            <textarea class="message" placeholder="Type your message..."></textarea><br>
+            <input type="submit" id="sub" name="sub" value="Send">
+
+        </form>
+    </div>
+    <footer>&#9400; 2025 Sakshi &#183; Made with ❤ by me</footer>
+    <script>
+        const toggle = document.getElementById("theme-toggle");
+
+        // Load saved mode
+        if (localStorage.getItem("mode") === "dark") {
+            document.body.classList.add("dark-mode");
+            toggle.textContent = "☀️";
+        }
+
+        toggle.onclick = () => {
+            document.body.classList.toggle("dark-mode");
+
+            if (document.body.classList.contains("dark-mode")) {
+                localStorage.setItem("mode", "dark");
+                toggle.textContent = "☀️";
+            } else {
+                localStorage.setItem("mode", "light");
+                toggle.textContent = "🌙";
+            }
+        };
+    </script>
+</body>
+
+</html>
